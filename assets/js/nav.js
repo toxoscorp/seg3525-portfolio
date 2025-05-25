@@ -41,3 +41,18 @@
   }
 
 })(); // End of use strict
+
+  // Select all cards
+  document.querySelectorAll('.project-img').forEach(function(card) {
+    card.style.cursor = 'pointer'; // Make it look clickable
+    card.addEventListener('click', function() {
+      window.location.href = 'wip.html';
+    });
+  });
+  // Select all cards
+  document.querySelectorAll('.project-card').forEach(function(card) {
+    card.style.cursor = 'pointer'; // Make it look clickable
+    card.addEventListener('click', function() {
+      window.location.href = 'wip.html';
+    });
+  });

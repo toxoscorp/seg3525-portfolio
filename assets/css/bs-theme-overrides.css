@@ -19,6 +19,7 @@
   --bs-body-bg-rgb: 255,252,242;
   --bs-secondary-bg: #CCC5B8;
   --bs-secondary-bg-rgb: 204,197,184;
+  --bs-body-font-family: Poppins, sans-serif;
 }
 
 .btn-primary {

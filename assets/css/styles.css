@@ -2,15 +2,41 @@
   border-color: rgba(34,34,34,.05);
   background-color: var(--bs-secondary-bg);
   transition: all .35s;
-  font-family: "Catamaran","Helvetica","Arial","sans-serif";
+  font-family: "Montserrat", sans-serif;
   font-weight: 200;
   letter-spacing: 1px;
+}
+
+h2 {
+  /*font-size: 2.5em;*/
+  /*letter-spacing: 0.1em;*/
+}
+
+h2 span {
+  display: inline-block;
+  transition: transform 0.2s;
+}
+
+.line {
+  /*background-image: url("../../assets/img/game2.png");*/
+  stroke: var(--bs-primary);
+  /*fill: var(--bs-secondary);*/
+  /*fill: none;*/
+  /*transition: filter 0.3s;*/
+  /*-webkit-box-shadow: 0px 0px 284px 30px rgba(45,255,196,0.81);*/
+  /*-moz-box-shadow: 0px 0px 284px 30px rgba(45,255,196,0.81);*/
+  /*box-shadow: 0px 0px 284px 30px rgba(45,255,196,0.81);*/
+  /*filter: drop-shadow(0 0 6px #3f51b5) drop-shadow(0 0 12px #3f51b5) drop-shadow(0 0 18px #3f51b5);*/
+}
+
+.aa {
+  /*height: 50vh;*/
 }
 
 .project-item {
   top: 30vh;
   /*padding-bottom: 30vh;*/
-  padding: 10px 10px 30vh 10px;
+  margin: 10px 10px 30vh 10px;
 }
 
 @media (max-width: 992px) {
@@ -72,7 +98,7 @@
 
 .bg-img2 {
   background-image: url('../../assets/img/bg22.png');
-  pointer-events: none;
+  /*pointer-events: none;*/
   background-repeat: no-repeat;
   /*position: absolute;*/
   /*width: 100%;*/
@@ -166,5 +192,9 @@ header.home {
     border-color: rgba(34,34,34,.1);
     background-color: var(--bs-secondary-bg);
   }
+}
+
+.fit-cover {
+  object-fit: cover;
 }
 
