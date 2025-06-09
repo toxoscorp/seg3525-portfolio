@@ -2,11 +2,11 @@
 <html data-bs-theme="light" lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Tristan Robichaud UI/UX Portfolio</title>
-    <meta name="description" content="UI/UX portfolio made for uOttawa SEG3121 course ">
-    <script type="application/ld+json">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title>Tristan Robichaud UI/UX Portfolio</title>
+  <meta name="description" content="UI/UX portfolio made for uOttawa SEG3121 course ">
+  <script type="application/ld+json">
         {
             "@context": "http://schema.org",
             "@type": "WebSite",
@@ -14,287 +14,348 @@
             "url": "https://toxoscorp.github.io/seg3525-portfolio/"
         }
     </script>
-    <script>
-        (function() {
+  <script>
+    (function () {
 
-            // JavaScript snippet handling Dark/Light mode switching
+      // JavaScript snippet handling Dark/Light mode switching
 
-            const getStoredTheme = () => localStorage.getItem('theme');
-            const setStoredTheme = theme => localStorage.setItem('theme', theme);
-            const forcedTheme = document.documentElement.getAttribute('data-bss-forced-theme');
+      const getStoredTheme = () => localStorage.getItem('theme');
+      const setStoredTheme = theme => localStorage.setItem('theme', theme);
+      const forcedTheme = document.documentElement.getAttribute('data-bss-forced-theme');
 
-            const getPreferredTheme = () => {
+      const getPreferredTheme = () => {
 
-                if (forcedTheme) return forcedTheme;
+        if (forcedTheme) return forcedTheme;
 
-                const storedTheme = getStoredTheme();
-                if (storedTheme) {
-                    return storedTheme;
-                }
+        const storedTheme = getStoredTheme();
+        if (storedTheme) {
+          return storedTheme;
+        }
 
-                const pageTheme = document.documentElement.getAttribute('data-bs-theme');
+        const pageTheme = document.documentElement.getAttribute('data-bs-theme');
 
-                if (pageTheme) {
-                    return pageTheme;
-                }
+        if (pageTheme) {
+          return pageTheme;
+        }
 
-                return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-            }
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
 
-            const setTheme = theme => {
-                if (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                    document.documentElement.setAttribute('data-bs-theme', 'dark');
-                } else {
-                    document.documentElement.setAttribute('data-bs-theme', theme);
-                }
-            }
+      const setTheme = theme => {
+        if (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          document.documentElement.setAttribute('data-bs-theme', 'dark');
+        } else {
+          document.documentElement.setAttribute('data-bs-theme', theme);
+        }
+      }
 
-            setTheme(getPreferredTheme());
+      setTheme(getPreferredTheme());
 
-            const showActiveTheme = (theme, focus = false) => {
-                const themeSwitchers = [].slice.call(document.querySelectorAll('.theme-switcher'));
+      const showActiveTheme = (theme, focus = false) => {
+        const themeSwitchers = [].slice.call(document.querySelectorAll('.theme-switcher'));
 
-                if (!themeSwitchers.length) return;
+        if (!themeSwitchers.length) return;
 
-                document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
-                    element.classList.remove('active');
-                    element.setAttribute('aria-pressed', 'false');
-                });
+        document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+          element.classList.remove('active');
+          element.setAttribute('aria-pressed', 'false');
+        });
 
-                for (const themeSwitcher of themeSwitchers) {
+        for (const themeSwitcher of themeSwitchers) {
 
-                    const btnToActivate = themeSwitcher.querySelector('[data-bs-theme-value="' + theme + '"]');
+          const btnToActivate = themeSwitcher.querySelector('[data-bs-theme-value="' + theme + '"]');
 
-                    if (btnToActivate) {
-                        btnToActivate.classList.add('active');
-                        btnToActivate.setAttribute('aria-pressed', 'true');
-                    }
-                }
-            }
+          if (btnToActivate) {
+            btnToActivate.classList.add('active');
+            btnToActivate.setAttribute('aria-pressed', 'true');
+          }
+        }
+      }
 
-            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
-                const storedTheme = getStoredTheme();
-                if (storedTheme !== 'light' && storedTheme !== 'dark') {
-                    setTheme(getPreferredTheme());
-                }
-            });
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+        const storedTheme = getStoredTheme();
+        if (storedTheme !== 'light' && storedTheme !== 'dark') {
+          setTheme(getPreferredTheme());
+        }
+      });
 
-            window.addEventListener('DOMContentLoaded', () => {
-                showActiveTheme(getPreferredTheme());
+      window.addEventListener('DOMContentLoaded', () => {
+        showActiveTheme(getPreferredTheme());
 
-                document.querySelectorAll('[data-bs-theme-value]')
-                    .forEach(toggle => {
-                        toggle.addEventListener('click', (e) => {
-                            e.preventDefault();
-                            const theme = toggle.getAttribute('data-bs-theme-value');
-                            setStoredTheme(theme);
-                            setTheme(theme);
-                            showActiveTheme(theme);
-                        })
-                    })
-            });
-        })();
-    </script>
-    <link rel="icon" type="image/svg+xml" sizes="600x600" href="assets/img/avatar1.svg">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/Poppins.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/css/bs-theme-overrides.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="assets/css/404.css">
-    <link rel="stylesheet" href="assets/css/footer.css">
-    <link rel="stylesheet" href="assets/css/wip.css">
+        document.querySelectorAll('[data-bs-theme-value]')
+          .forEach(toggle => {
+            toggle.addEventListener('click', (e) => {
+              e.preventDefault();
+              const theme = toggle.getAttribute('data-bs-theme-value');
+              setStoredTheme(theme);
+              setTheme(theme);
+              showActiveTheme(theme);
+            })
+          })
+      });
+    })();
+  </script>
+  <link rel="icon" type="image/svg+xml" sizes="600x600" href="assets/img/avatar1.svg">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/Poppins.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/css/bs-theme-overrides.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/404.css">
+  <link rel="stylesheet" href="assets/css/footer.css">
+  <link rel="stylesheet" href="assets/css/wip.css">
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-md fixed-top" id="mainNav">
-        <div class="container"><a class="navbar-brand" href="#home">Tristan Robichaud</a><button data-bs-toggle="collapse" data-bs-target="#navbarResponsive" class="navbar-toggler float-end" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link active" href="#aboutme">About Me</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="#casesstudies">Case Studies</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="#contact">Contact</a></li>
-                    <li class="theme-switcher nav-item dropdown"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" data-bs-auto-close="inside" href="#" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-sun-fill mb-1">
-                                <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"></path>
-                            </svg></a>
-                        <div class="dropdown-menu"><a class="dropdown-item d-flex align-items-center" href="#" data-bs-theme-value="light"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-sun-fill opacity-50 me-2">
-                                    <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"></path>
-                                </svg>Light</a><a class="dropdown-item d-flex align-items-center" href="#" data-bs-theme-value="dark"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-moon-stars-fill opacity-50 me-2">
-                                    <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278"></path>
-                                    <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"></path>
-                                </svg>Dark</a><a class="dropdown-item d-flex align-items-center" href="#" data-bs-theme-value="auto"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-circle-half opacity-50 me-2">
-                                    <path d="M8 15A7 7 0 1 0 8 1zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16"></path>
-                                </svg>Auto</a></div>
-                    </li>
-                </ul>
-            </div>
+  <nav class="navbar navbar-expand-md fixed-top" id="mainNav">
+    <div class="container"><a class="navbar-brand" href="#home">Tristan Robichaud</a><button data-bs-toggle="collapse"
+        data-bs-target="#navbarResponsive" class="navbar-toggler float-end" aria-controls="navbarResponsive"
+        aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="#aboutme">About Me</a></li>
+          <li class="nav-item"><a class="nav-link active" href="#casesstudies">Case Studies</a></li>
+          <li class="nav-item"><a class="nav-link active" href="#contact">Contact</a></li>
+          <li class="theme-switcher nav-item dropdown"><a class="dropdown-toggle nav-link" aria-expanded="false"
+              data-bs-toggle="dropdown" data-bs-auto-close="inside" href="#" target="_blank"><svg
+                xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16"
+                class="bi bi-sun-fill mb-1">
+                <path
+                  d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z">
+                </path>
+              </svg></a>
+            <div class="dropdown-menu"><a class="dropdown-item d-flex align-items-center" href="#"
+                data-bs-theme-value="light"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                  fill="currentColor" viewBox="0 0 16 16" class="bi bi-sun-fill opacity-50 me-2">
+                  <path
+                    d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z">
+                  </path>
+                </svg>Light</a><a class="dropdown-item d-flex align-items-center" href="#"
+                data-bs-theme-value="dark"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                  fill="currentColor" viewBox="0 0 16 16" class="bi bi-moon-stars-fill opacity-50 me-2">
+                  <path
+                    d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278">
+                  </path>
+                  <path
+                    d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z">
+                  </path>
+                </svg>Dark</a><a class="dropdown-item d-flex align-items-center" href="#"
+                data-bs-theme-value="auto"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                  fill="currentColor" viewBox="0 0 16 16" class="bi bi-circle-half opacity-50 me-2">
+                  <path d="M8 15A7 7 0 1 0 8 1zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16"></path>
+                </svg>Auto</a></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <header id="home" class="home" style="overflow: clip;">
+    <div class="container py-4 py-xl-5">
+      <div class="row gy-4 gy-md-0">
+        <div
+          class="col-md-6 text-center text-md-start d-flex d-sm-flex d-md-flex justify-content-center align-items-center justify-content-md-start align-items-md-center justify-content-xl-center">
+          <div style="max-width: 350px;">
+            <h2 class="text-uppercase fw-bold">
+              <span>T</span><span>r</span><span>i</span><span>s</span><span>t</span><span>a</span><span>n</span><span>&nbsp;</span><span>R</span><span>o</span><span>b</span><span>i</span><span>c</span><span>h</span><span>a</span><span>u</span><span>d</span>
+            </h2>
+            <p data-aos="fade-right" class="my-3">Software Developer and Designer<br>I transform problem into solutions.
+            </p><a class="btn btn-primary btn-lg me-2" role="button" href="#casesstudies">My Case Studies</a>
+          </div>
         </div>
-    </nav>
-    <header id="home" class="home" style="overflow: clip;">
-        <div class="container py-4 py-xl-5">
-            <div class="row gy-4 gy-md-0">
-                <div class="col-md-6 text-center text-md-start d-flex d-sm-flex d-md-flex justify-content-center align-items-center justify-content-md-start align-items-md-center justify-content-xl-center">
-                    <div style="max-width: 350px;">
-                        <h2 class="text-uppercase fw-bold"><span>T</span><span>r</span><span>i</span><span>s</span><span>t</span><span>a</span><span>n</span><span>&nbsp;</span><span>R</span><span>o</span><span>b</span><span>i</span><span>c</span><span>h</span><span>a</span><span>u</span><span>d</span></h2>
-                        <p data-aos="fade-right" class="my-3">Software Developer and Designer<br>I transform problem into solutions.</p><a class="btn btn-primary btn-lg me-2" role="button" href="#casesstudies">My Case Studies</a>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="img-avatar position-relative top-50 start-50 translate-middle" style="margin: 20px;padding: 0;"><img class="avatar-bg" src="assets/img/v1.svg"><img class="avatar" src="assets/img/avatar1.svg"></div>
-                </div>
-            </div>
+        <div class="col-md-6">
+          <div class="img-avatar position-relative top-50 start-50 translate-middle" style="margin: 20px;padding: 0;">
+            <img class="avatar-bg" src="assets/img/v1.svg"><img class="avatar" src="assets/img/avatar1.svg">
+          </div>
         </div>
-    </header>
-    <section id="aboutme" style="overflow: hidden;">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 idk-an" data-aos="slide-right" data-aos-duration="1000"><img class="pers position-relative top-50 start-50 translate-middle vh-100 idk-an" src="assets/img/avatar2.png"></div>
-                <div class="col-md-6 offset-lg-0 d-flex flex-column justify-content-lg-center">
-                    <div class="row">
-                        <div class="col">
-                            <h1 data-aos="zoom-in-left">About Me</h1>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <p data-aos="zoom-out-left">Hi, my name is <strong>Tristan Robichaud</strong>. I’m a Software Engineering student at the <strong>University of Ottawa</strong> with a strong interest in embedded systems, electronics, and building efficient, user-friendly software. I currently serve as the Software Lead for the uOttawa Supermileage team, where I help develop embedded systems for a battery-electric urban vehicle competing in the Shell Eco-marathon.</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <p data-aos="zoom-in-left">While I don't yet have extensive formal experience as a UI/UX designer, I am currently taking a User Interface (UI) Design course at the University of Ottawa. Through this course, I’m learning the fundamentals of user-centered design, usability heuristics from the Nielsen Norman Group, and techniques for prototyping and evaluating interfaces.</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <p data-aos="zoom-out-left">In my past UI/UX projects, I typically began by searching online for inspiration, then moved to the drawing board or Figma to create proper wireframes of the website and its various pages. I would use online tools to compare and contrast color palettes, ensuring a visually appealing design. Once the wireframes were complete, I translated them into full designs and built the UI using the most suitable technology for the project—whether that was React, Vue, or LVGL.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      </div>
+    </div>
+  </header>
+  <section id="aboutme" style="overflow: hidden;">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 idk-an" data-aos="slide-right" data-aos-duration="1000"><img
+            class="pers position-relative top-50 start-50 translate-middle vh-100 idk-an" src="assets/img/avatar2.png">
         </div>
-    </section><img class="bg-img" src="assets/img/abstract-wave-line-art-background_8760403.png">
-    <section id="casesstudies" class="bg-img2">
-        <div class="container d-flex flex-column justify-content-evenly">
-            <div class="row">
-                <div class="col">
-                    <h1 class="text-center cs-title" data-aos="slide-up" style="margin-top: 20vh;">Case Studies</h1>
-                </div>
+        <div class="col-md-6 offset-lg-0 d-flex flex-column justify-content-lg-center">
+          <div class="row">
+            <div class="col">
+              <h1 data-aos="zoom-in-left">About Me</h1>
             </div>
-            <div class="row justify-content-lg-center align-items-lg-center sticky-top project-item" data-bss-disabled-mobile="true" data-bss-hover-animate="pulse" style="margin-top: 0;">
-                <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4 align-self-end" style="padding: 0px;">
-                    <div class="project-img" style="background-image:url(&quot;assets/img/audio.png&quot;);"></div>
-                </div>
-                <div class="col-sm-12 col-md-12 col-lg-5 col-xl-4 col-xxl-4" style="padding:0px;">
-                    <div class="card bg-body-secondary project-card">
-                        <div class="card-body text-start" style="height:40vh;">
-                            <h4 class="card-title">SuperSon</h4>
-                            <h6 class="text-muted card-subtitle mb-2">Audio, Lightning and Event Management</h6>
-                            <p class="card-text">A professional showcase website where clients can book audio technician services for their events (concerts, conferences, etc.). It highlights the services offered, past experiences, and includes a contact/quote request form.</p>
-                        </div>
-                    </div>
-                </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <p data-aos="zoom-out-left">Hi, my name is <strong>Tristan Robichaud</strong>. I’m a Software Engineering
+                student at the <strong>University of Ottawa</strong> with a strong interest in embedded systems,
+                electronics, and building efficient, user-friendly software. I currently serve as the Software Lead for
+                the uOttawa Supermileage team, where I help develop embedded systems for a battery-electric urban
+                vehicle competing in the Shell Eco-marathon.</p>
             </div>
-            <div class="row justify-content-lg-center align-items-lg-center sticky-top project-item" data-bss-disabled-mobile="true" data-bss-hover-animate="pulse">
-                <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4 align-self-end" style="padding: 0px;">
-                    <div class="project-img" style="background-image:url(&quot;assets/img/game.png&quot;);"></div>
-                </div>
-                <div class="col-sm-12 col-md-12 col-lg-5 col-xl-4 col-xxl-4" style="padding:0px;">
-                    <div class="card bg-body-secondary project-card">
-                        <div class="card-body text-start" style="height:40vh;">
-                            <h4 class="card-title">Pyramoid</h4>
-                            <h6 class="text-muted card-subtitle mb-2">Small Indi Web Game</h6>
-                            <p class="card-text">A minimalist platformer game where the player controls a character through simple levels using jumping and smooth movement mechanics. The focus is on responsiveness and quick exploration.</p>
-                        </div>
-                    </div>
-                </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <p data-aos="zoom-in-left">While I don't yet have extensive formal experience as a UI/UX designer, I am
+                currently taking a User Interface (UI) Design course at the University of Ottawa. Through this course,
+                I’m learning the fundamentals of user-centered design, usability heuristics from the Nielsen Norman
+                Group, and techniques for prototyping and evaluating interfaces.</p>
             </div>
-            <div class="row justify-content-lg-center align-items-lg-center sticky-top project-item" data-bss-disabled-mobile="true" data-bss-hover-animate="pulse">
-                <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4 align-self-end" style="padding: 0px;">
-                    <div class="project-img" style="background-image:url(&quot;assets/img/ecom.png&quot;);"></div>
-                </div>
-                <div class="col-sm-12 col-md-12 col-lg-5 col-xl-4 col-xxl-4" style="padding:0px;">
-                    <div class="card bg-body-secondary project-card">
-                        <div class="card-body text-start" style="height:40vh;">
-                            <h4 class="card-title">Smart Buyer</h4>
-                            <h6 class="text-muted card-subtitle mb-2">E-Commerce WebSite</h6>
-                            <p class="card-text">A modern online store for selling physical and digital products at a discount. The design emphasizes intuitive navigation, clear product pages, and a streamlined checkout process.</p>
-                        </div>
-                    </div>
-                </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <p data-aos="zoom-out-left">In my past UI/UX projects, I typically began by searching online for
+                inspiration, then moved to the drawing board or Figma to create proper wireframes of the website and its
+                various pages. I would use online tools to compare and contrast color palettes, ensuring a visually
+                appealing design. Once the wireframes were complete, I translated them into full designs and built the
+                UI using the most suitable technology for the project—whether that was React, Vue, or LVGL.</p>
             </div>
-            <div class="row justify-content-lg-center align-items-lg-center sticky-top project-item" data-bss-disabled-mobile="true" data-bss-hover-animate="pulse">
-                <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4 align-self-end" style="padding: 0px;">
-                    <div class="project-img" style="background-image:url(&quot;assets/img/analytics.png&quot;);"></div>
-                </div>
-                <div class="col-sm-12 col-md-12 col-lg-5 col-xl-4 col-xxl-4" style="padding:0px;">
-                    <div class="card bg-body-secondary project-card">
-                        <div class="card-body text-start" style="height:40vh;">
-                            <h4 class="card-title">Managify</h4>
-                            <h6 class="text-muted card-subtitle mb-2">Enterprise Analytics Web Site</h6>
-                            <p class="card-text">An interactive platform offering clear, dynamic data visualizations for enterprise management. Users can filter, compare, and analyze data through modern, engaging charts.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
-    </section>
-    <section id="contact" class="position-relative py-4 py-xl-5">
-        <div class="container position-relative">
-            <div class="row d-flex justify-content-center">
-                <div class="col-sm-12 col-md-12 col-lg-6 text-center align-self-center mx-auto">
-                    <h1 class="display-1">Contact Me</h1>
-                    <p class="lead w-lg-50">Want to work on a project with me ? Or get more information on my projects ?</p>
-                </div>
-                <div class="col-md-6 col-lg-6 col-xl-6">
-                    <div>
-                        <form class="p-3 p-xl-4" method="post">
-                            <div class="mb-3"><input class="form-control" type="text" id="name-1" name="name" placeholder="Name"></div>
-                            <div class="mb-3"><input class="form-control" type="email" id="email-1" name="email" placeholder="Email"></div>
-                            <div class="mb-3"><textarea class="form-control" id="message-1" name="message" rows="6" placeholder="Message"></textarea></div>
-                            <div><button class="btn btn-primary d-block w-100" type="submit">Send </button></div>
-                        </form>
-                    </div>
-                </div>
-            </div>
+      </div>
+    </div>
+  </section><img class="bg-img" src="assets/img/abstract-wave-line-art-background_8760403.png">
+  <section id="casesstudies" class="bg-img2">
+    <div class="container d-flex flex-column justify-content-evenly">
+      <div class="row">
+        <div class="col">
+          <h1 class="text-center cs-title" data-aos="slide-up" style="margin-top: 20vh;">Case Studies</h1>
         </div>
-    </section>
-    <footer class="text-center text-bg-primary py-4" data-bs-theme="light">
-        <div class="container">
-            <div class="row row-cols-1 row-cols-lg-3">
-                <div class="col">
-                    <p class="text-muted my-2">Copyright&nbsp;© 2025 Tristan Robichaud</p>
-                </div>
-                <div class="col">
-                    <ul class="list-inline my-2">
-                        <li class="list-inline-item me-4"><a href="https://github.com/toxoscorp">
-                                <div class="bs-icon-circle bs-icon-primary bs-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-github text-muted">
-                                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8"></path>
-                                    </svg></div>
-                            </a></li>
-                        <li class="list-inline-item me-4"><a href="https://www.linkedin.com/in/tristan-robichaud-2448b1293/">
-                                <div class="bs-icon-circle bs-icon-primary bs-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-linkedin text-muted">
-                                        <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401m-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4"></path>
-                                    </svg></div>
-                            </a></li>
-                        <li class="list-inline-item"><a href="mailto:trobi091@uottawa.ca">
-                                <div class="bs-icon-circle bs-icon-primary bs-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-envelope text-muted">
-                                        <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"></path>
-                                    </svg></div>
-                            </a></li>
-                    </ul>
-                </div>
-            </div>
+      </div>
+      <div class="row justify-content-lg-center align-items-lg-center sticky-top project-item"
+        data-bss-disabled-mobile="true" data-bss-hover-animate="pulse" style="margin-top: 0;">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4 align-self-end" style="padding: 0px;">
+          <div class="project-img gymjim" style="background-image:url(&quot;assets/img/audio.png&quot;);"></div>
         </div>
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script src="assets/js/bs-init.js"></script>
-    <script src="assets/js/anime.mjs" type="module"></script>
-    <script src="assets/js/mail.js"></script>
-    <script src="assets/js/nav.js"></script>
+        <div class="col-sm-12 col-md-12 col-lg-5 col-xl-4 col-xxl-4" style="padding:0px;">
+          <div class="card bg-body-secondary project-card gymjim">
+            <div class="card-body text-start" style="height:40vh;">
+              <h4 class="card-title">GymJim</h4>
+              <h6 class="text-muted card-subtitle mb-2">Fitness Center Website</h6>
+              <p class="card-text">GymJim is a comprehensive fitness center website built with React and Bootstrap. The
+                application provides users with a seamless experience to explore various fitness programs, meet
+                professional trainers, book sessions, and sign up for memberships. The interface is intuitive and
+                responsive, ensuring a great user experience across devices.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-lg-center align-items-lg-center sticky-top project-item"
+        data-bss-disabled-mobile="true" data-bss-hover-animate="pulse">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4 align-self-end" style="padding: 0px;">
+          <div class="project-img" style="background-image:url(&quot;assets/img/game.png&quot;);"></div>
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-5 col-xl-4 col-xxl-4" style="padding:0px;">
+          <div class="card bg-body-secondary project-card">
+            <div class="card-body text-start" style="height:40vh;">
+              <h4 class="card-title">Pyramoid</h4>
+              <h6 class="text-muted card-subtitle mb-2">Small Indi Web Game</h6>
+              <p class="card-text">A minimalist platformer game where the player controls a character through simple
+                levels using jumping and smooth movement mechanics. The focus is on responsiveness and quick
+                exploration.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-lg-center align-items-lg-center sticky-top project-item"
+        data-bss-disabled-mobile="true" data-bss-hover-animate="pulse">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4 align-self-end" style="padding: 0px;">
+          <div class="project-img" style="background-image:url(&quot;assets/img/ecom.png&quot;);"></div>
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-5 col-xl-4 col-xxl-4" style="padding:0px;">
+          <div class="card bg-body-secondary project-card">
+            <div class="card-body text-start" style="height:40vh;">
+              <h4 class="card-title">Smart Buyer</h4>
+              <h6 class="text-muted card-subtitle mb-2">E-Commerce WebSite</h6>
+              <p class="card-text">A modern online store for selling physical and digital products at a discount. The
+                design emphasizes intuitive navigation, clear product pages, and a streamlined checkout process.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-lg-center align-items-lg-center sticky-top project-item"
+        data-bss-disabled-mobile="true" data-bss-hover-animate="pulse">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4 align-self-end" style="padding: 0px;">
+          <div class="project-img" style="background-image:url(&quot;assets/img/analytics.png&quot;);"></div>
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-5 col-xl-4 col-xxl-4" style="padding:0px;">
+          <div class="card bg-body-secondary project-card">
+            <div class="card-body text-start" style="height:40vh;">
+              <h4 class="card-title">Managify</h4>
+              <h6 class="text-muted card-subtitle mb-2">Enterprise Analytics Web Site</h6>
+              <p class="card-text">An interactive platform offering clear, dynamic data visualizations for enterprise
+                management. Users can filter, compare, and analyze data through modern, engaging charts.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="contact" class="position-relative py-4 py-xl-5">
+    <div class="container position-relative">
+      <div class="row d-flex justify-content-center">
+        <div class="col-sm-12 col-md-12 col-lg-6 text-center align-self-center mx-auto">
+          <h1 class="display-1">Contact Me</h1>
+          <p class="lead w-lg-50">Want to work on a project with me ? Or get more information on my projects ?</p>
+        </div>
+        <div class="col-md-6 col-lg-6 col-xl-6">
+          <div>
+            <form class="p-3 p-xl-4" method="post">
+              <div class="mb-3"><input class="form-control" type="text" id="name-1" name="name" placeholder="Name">
+              </div>
+              <div class="mb-3"><input class="form-control" type="email" id="email-1" name="email" placeholder="Email">
+              </div>
+              <div class="mb-3"><textarea class="form-control" id="message-1" name="message" rows="6"
+                  placeholder="Message"></textarea></div>
+              <div><button class="btn btn-primary d-block w-100" type="submit">Send </button></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="text-center text-bg-primary py-4" data-bs-theme="light">
+    <div class="container">
+      <div class="row row-cols-1 row-cols-lg-3">
+        <div class="col">
+          <p class="text-muted my-2">Copyright&nbsp;© 2025 Tristan Robichaud</p>
+        </div>
+        <div class="col">
+          <ul class="list-inline my-2">
+            <li class="list-inline-item me-4"><a href="https://github.com/toxoscorp">
+                <div class="bs-icon-circle bs-icon-primary bs-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em"
+                    height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-github text-muted">
+                    <path
+                      d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8">
+                    </path>
+                  </svg></div>
+              </a></li>
+            <li class="list-inline-item me-4"><a href="https://www.linkedin.com/in/tristan-robichaud-2448b1293/">
+                <div class="bs-icon-circle bs-icon-primary bs-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em"
+                    height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-linkedin text-muted">
+                    <path
+                      d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401m-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4">
+                    </path>
+                  </svg></div>
+              </a></li>
+            <li class="list-inline-item"><a href="mailto:trobi091@uottawa.ca">
+                <div class="bs-icon-circle bs-icon-primary bs-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em"
+                    height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-envelope text-muted">
+                    <path
+                      d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z">
+                    </path>
+                  </svg></div>
+              </a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="assets/js/bs-init.js"></script>
+  <script src="assets/js/anime.mjs" type="module"></script>
+  <script src="assets/js/mail.js"></script>
+  <script src="assets/js/nav.js"></script>
 </body>
 
 </html>

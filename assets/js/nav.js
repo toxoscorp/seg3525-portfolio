@@ -46,13 +46,21 @@
   document.querySelectorAll('.project-img').forEach(function(card) {
     card.style.cursor = 'pointer'; // Make it look clickable
     card.addEventListener('click', function() {
-      window.location.href = 'wip.html';
+      if (card.classList.contains('gymjim')) {
+        window.location.href = 'https://uottawa-project-sharing.github.io/seg3525-assignment2/';
+      } else {
+        window.location.href = 'wip.html';
+      }
     });
   });
   // Select all cards
   document.querySelectorAll('.project-card').forEach(function(card) {
     card.style.cursor = 'pointer'; // Make it look clickable
     card.addEventListener('click', function() {
-      window.location.href = 'wip.html';
+      if (card.classList.contains('gymjim')) {
+        window.location.href = 'https://uottawa-project-sharing.github.io/seg3525-assignment2/';
+      } else {
+        window.location.href = 'wip.html';
+      }
     });
   });
