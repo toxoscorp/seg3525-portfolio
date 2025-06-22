@@ -48,7 +48,9 @@
     card.addEventListener('click', function() {
       if (card.classList.contains('gymjim')) {
         window.location.href = 'https://uottawa-project-sharing.github.io/seg3525-assignment2/';
-      } else {
+      } else if (card.classList.contains('tilematcher')) {
+      window.location.href = 'https://uottawa-project-sharing.github.io/seg3525-assignment3/';
+    } else {
         window.location.href = 'wip.html';
       }
     });
@@ -59,7 +61,9 @@
     card.addEventListener('click', function() {
       if (card.classList.contains('gymjim')) {
         window.location.href = 'https://uottawa-project-sharing.github.io/seg3525-assignment2/';
-      } else {
+      } else if (card.classList.contains('tilematcher')) {
+      window.location.href = 'https://uottawa-project-sharing.github.io/seg3525-assignment3/';
+    } else {
         window.location.href = 'wip.html';
       }
     });
