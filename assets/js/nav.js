@@ -51,9 +51,11 @@
       } else if (card.classList.contains('tilematcher')) {
       window.location.href = 'https://uottawa-project-sharing.github.io/seg3525-assignment3/';
     } else if (card.classList.contains('stylenest')) {
-      window.location.href = 'https://uottawa-project-sharing.github.io/seg3525-assignment4/';
+        window.location.href = 'https://uottawa-project-sharing.github.io/seg3525-assignment4/';
+    } else if (card.classList.contains('gpstz')) {
+      window.location.href = 'https://uottawa-project-sharing.github.io/seg3525-assignment5/';
     } else {
-        window.location.href = 'wip.html';
+        // window.location.href = 'wip.html';
       }
     });
   });
@@ -67,8 +69,10 @@
       window.location.href = 'https://uottawa-project-sharing.github.io/seg3525-assignment3/';
     } else if (card.classList.contains('stylenest')) {
       window.location.href = 'https://uottawa-project-sharing.github.io/seg3525-assignment4/';
+    } else if (card.classList.contains('gpstz')) {
+        window.location.href = 'https://uottawa-project-sharing.github.io/seg3525-assignment5/';
     } else {
-        window.location.href = 'wip.html';
+        // window.location.href = 'wip.html';
       }
     });
   });
